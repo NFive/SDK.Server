@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+	<metadata>
+		<id>NFive.SDK.Server</id>
+		<version>1.0.0</version>
+		<title>NFive.SDK.Server</title>
+		<authors>NFive</authors>
+		<owners>NFive</owners>
+		<licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
+		<projectUrl>https://github.com/NFive/SDK.Server</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>NFive SDK for server plugins.</description>
+		<releaseNotes>Initial release.</releaseNotes>
+		<copyright>Copyright NFive 2018</copyright>
+		<tags></tags>
+		<dependencies>
+			<dependency id="NFive.SDK.Core" version="1.0.0" />
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="bin\Release\NFive.SDK.Server.net.dll" target="lib\net452\NFive.SDK.Server.net.dll" />
+	</files>
+</package>
