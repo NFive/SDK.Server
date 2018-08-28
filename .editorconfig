@@ -7,12 +7,9 @@ end_of_line = crlf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.{csproj,config,md,json,yml}]
+[*.{csproj,config,md}]
 indent_style = space
 indent_size = 2
 
 [*.{csproj,config}]
 insert_final_newline = false
-
-[*.json]
-end_of_line = lf
