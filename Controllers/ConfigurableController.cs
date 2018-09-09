@@ -5,7 +5,7 @@ using NFive.SDK.Server.Rpc;
 
 namespace NFive.SDK.Server.Controllers
 {
-	public abstract class ConfigurableController<T> : Controller where T : IControllerConfiguration
+	public abstract class ConfigurableController<T> : Controller where T : ControllerConfiguration
 	{
 		protected readonly T Configuration;
 
