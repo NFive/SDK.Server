@@ -59,6 +59,8 @@ namespace NFive.SDK.Server.Events
 		void OnRequest<T1, T2, T3, T4, T5, TReturn>(string @event, Func<T1, T2, T3, T4, T5, TReturn> action);
 
 
+		TReturn Request<TReturn>(string @event);
+
 		TReturn Request<T1, TReturn>(string @event, T1 arg);
 
 		TReturn Request<T1, T2, TReturn>(string @event, T1 arg);
