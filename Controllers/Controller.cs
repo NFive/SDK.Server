@@ -18,5 +18,7 @@ namespace NFive.SDK.Server.Controllers
 			this.Events = events;
 			this.Rpc = rpc;
 		}
+
+		protected virtual void Reload() { }
 	}
 }

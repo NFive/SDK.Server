@@ -7,11 +7,13 @@ namespace NFive.SDK.Server.Controllers
 {
 	public abstract class ConfigurableController<T> : Controller where T : ControllerConfiguration
 	{
-		protected readonly T Configuration;
+		protected T Configuration { get; private set; }
 
 		protected ConfigurableController(ILogger logger, IEventManager events, IRpcHandler rpc, T configuration) : base(logger, events, rpc)
 		{
 			this.Configuration = configuration;
 		}
+
+		protected virtual void Reload(T configuration) { this.Configuration = configuration; }
 	}
 }
