@@ -14,6 +14,6 @@ namespace NFive.SDK.Server.Controllers
 			this.Configuration = configuration;
 		}
 
-		protected virtual void Reload(T configuration) { this.Configuration = configuration; }
+		public virtual void Reload(T configuration) { this.Configuration = configuration; }
 	}
 }
