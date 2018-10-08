@@ -6,7 +6,9 @@
 
 		string Name { get; }
 
-		long SteamId { get; }
+		string License { get; }
+
+		long? SteamId { get; }
 
 		string EndPoint { get; }
 
