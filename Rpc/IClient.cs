@@ -1,5 +1,8 @@
-﻿namespace NFive.SDK.Server.Rpc
+﻿using JetBrains.Annotations;
+
+namespace NFive.SDK.Server.Rpc
 {
+	[PublicAPI]
 	public interface IClient
 	{
 		int Handle { get; }

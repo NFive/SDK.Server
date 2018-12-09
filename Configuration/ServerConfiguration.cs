@@ -1,7 +1,9 @@
-﻿using NFive.SDK.Core.Diagnostics;
+﻿using JetBrains.Annotations;
+using NFive.SDK.Core.Diagnostics;
 
 namespace NFive.SDK.Server.Configuration
 {
+	[PublicAPI]
 	public static class ServerConfiguration
 	{
 		public static LogLevel LogLevel { get; set; } = LogLevel.Debug;

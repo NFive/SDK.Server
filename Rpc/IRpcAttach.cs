@@ -1,7 +1,9 @@
 ﻿using System;
+using JetBrains.Annotations;
 
 namespace NFive.SDK.Server.Rpc
 {
+	[PublicAPI]
 	public interface IRpcAttach
 	{
 		void OnRaw(Delegate callback);

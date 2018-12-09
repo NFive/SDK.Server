@@ -1,5 +1,8 @@
-﻿namespace NFive.SDK.Server.Events
+﻿using JetBrains.Annotations;
+
+namespace NFive.SDK.Server.Events
 {
+	[PublicAPI]
 	public static class BootEvents
 	{
 		public const string GetTime = "nfive:server:boot:getTime";
