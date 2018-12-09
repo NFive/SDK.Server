@@ -12,7 +12,7 @@
 		<copyright>Copyright NFive 2018</copyright>
 		<tags>nfive fivem</tags>
 		<dependencies>
-			<dependency id="NFive.SDK.Core" version="0.1.0.5" />
+			<dependency id="NFive.SDK.Core" version="0.1.0.18" />
 		</dependencies>
 	</metadata>
 	<files>
