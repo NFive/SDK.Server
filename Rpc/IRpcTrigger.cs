@@ -2,6 +2,9 @@
 
 namespace NFive.SDK.Server.Rpc
 {
+	/// <summary>
+	/// Represents the ability send RPC events.
+	/// </summary>
 	[PublicAPI]
 	public interface IRpcTrigger
 	{

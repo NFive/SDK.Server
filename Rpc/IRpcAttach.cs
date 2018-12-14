@@ -3,6 +3,9 @@ using JetBrains.Annotations;
 
 namespace NFive.SDK.Server.Rpc
 {
+	/// <summary>
+	/// Represents the ability listen for and receive RPC events.
+	/// </summary>
 	[PublicAPI]
 	public interface IRpcAttach
 	{

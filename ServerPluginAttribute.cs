@@ -4,5 +4,8 @@ using NFive.SDK.Core;
 namespace NFive.SDK.Server
 {
 	[PublicAPI]
-	public class ServerPluginAttribute : PluginAttribute { }
+	public class ServerPluginAttribute : PluginAttribute
+	{
+		public ServerPluginAttribute(uint target) : base(target) { }
+	}
 }
