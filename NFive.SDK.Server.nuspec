@@ -12,7 +12,8 @@
 		<copyright>Copyright NFive 2018</copyright>
 		<tags>nfive fivem</tags>
 		<dependencies>
-			<dependency id="NFive.SDK.Core" version="0.1.0.18" />
+			<dependency id="MySql.Data.EntityFramework" version="8.0.13" />
+			<dependency id="NFive.SDK.Core" version="0.1.0.20" />
 		</dependencies>
 	</metadata>
 	<files>
