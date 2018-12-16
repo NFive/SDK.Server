@@ -87,6 +87,7 @@
     <Compile Include="Rpc\IRpcEvent.cs" />
     <Compile Include="Rpc\IRpcHandler.cs" />
     <Compile Include="Rpc\IRpcTrigger.cs" />
+    <Compile Include="SDK.cs" />
     <Compile Include="ServerPluginAttribute.cs" />
     <Compile Include="Storage\EFContext.cs" />
   </ItemGroup>
