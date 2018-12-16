@@ -8,6 +8,10 @@ namespace NFive.SDK.Server.Rpc
 	[PublicAPI]
 	public interface IRpcTrigger
 	{
+		/// <summary>
+		/// Triggers the event with the specified payloads.
+		/// </summary>
+		/// <param name="payloads">The payloads to send with the event.</param>
 		void Trigger(params object[] payloads);
 	}
 }
