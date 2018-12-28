@@ -1,6 +1,7 @@
 ﻿using NFive.SDK.Core.Controllers;
 using NFive.SDK.Core.Diagnostics;
 using NFive.SDK.Server.Events;
+using NFive.SDK.Server.Rcon;
 using NFive.SDK.Server.Rpc;
 
 namespace NFive.SDK.Server.Controllers
@@ -28,8 +29,9 @@ namespace NFive.SDK.Server.Controllers
 		/// <param name="logger">The message logger.</param>
 		/// <param name="events">The server event manager.</param>
 		/// <param name="rpc">The RPC handler.</param>
+		/// <param name="rcon">The RCON handler.</param>
 		/// <param name="configuration">The configuration loaded from file.</param>
-		protected ConfigurableController(ILogger logger, IEventManager events, IRpcHandler rpc, T configuration) : base(logger, events, rpc)
+		protected ConfigurableController(ILogger logger, IEventManager events, IRpcHandler rpc, IRconManager rcon, T configuration) : base(logger, events, rpc, rcon)
 		{
 			this.Configuration = configuration;
 		}
