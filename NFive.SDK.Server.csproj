@@ -75,7 +75,6 @@
     <Compile Include="Configuration\ServerConfiguration.cs" />
     <Compile Include="Controllers\ConfigurableController.cs" />
     <Compile Include="Controllers\Controller.cs" />
-    <Compile Include="Controllers\RconManager.cs" />
     <Compile Include="Events\BootEvents.cs" />
     <Compile Include="Events\IEventManager.cs" />
     <Compile Include="Events\ServerEvents.cs" />
