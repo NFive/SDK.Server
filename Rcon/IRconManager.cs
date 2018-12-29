@@ -5,5 +5,7 @@ namespace NFive.SDK.Server.Rcon
 	public interface IRconManager
 	{
 		void Register<T>(string command, Action<T> callback);
+
+		void Register(string command, Action callback);
 	}
 }
