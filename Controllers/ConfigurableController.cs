@@ -1,4 +1,4 @@
-﻿using NFive.SDK.Core.Controllers;
+using NFive.SDK.Core.Controllers;
 using NFive.SDK.Core.Diagnostics;
 using NFive.SDK.Server.Events;
 using NFive.SDK.Server.Rcon;

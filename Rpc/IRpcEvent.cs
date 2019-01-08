@@ -1,4 +1,4 @@
-﻿using JetBrains.Annotations;
+using JetBrains.Annotations;
 using NFive.SDK.Core.Models.Player;
 
 namespace NFive.SDK.Server.Rpc

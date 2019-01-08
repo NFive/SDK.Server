@@ -1,4 +1,4 @@
-﻿using JetBrains.Annotations;
+using JetBrains.Annotations;
 using NFive.SDK.Core.Diagnostics;
 
 namespace NFive.SDK.Server.Configuration

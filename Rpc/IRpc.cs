@@ -1,4 +1,4 @@
-﻿namespace NFive.SDK.Server.Rpc
+namespace NFive.SDK.Server.Rpc
 {
 	/// <inheritdoc cref="IRpcTrigger" />
 	/// <inheritdoc cref="IRpcAttach" />

@@ -1,10 +1,10 @@
-﻿using System;
+using JetBrains.Annotations;
+using MySql.Data.EntityFramework;
+using NFive.SDK.Server.Configuration;
+using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
-using NFive.SDK.Server.Configuration;
-using JetBrains.Annotations;
-using MySql.Data.EntityFramework;
 
 namespace NFive.SDK.Server.Storage
 {

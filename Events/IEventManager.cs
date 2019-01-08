@@ -1,6 +1,6 @@
-﻿using System;
-using System.Threading.Tasks;
 using JetBrains.Annotations;
+using System;
+using System.Threading.Tasks;
 
 namespace NFive.SDK.Server.Events
 {
@@ -132,7 +132,7 @@ namespace NFive.SDK.Server.Events
 		/// <param name="arg4">The forth event argument.</param>
 		/// <param name="arg5">The fifth event argument.</param>
 		void Raise<T1, T2, T3, T4, T5>(string @event, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5);
-		
+
 		/// <summary>
 		/// Raises the specified event asynchronously and returns when the event has been handled.
 		/// </summary>
