@@ -22,6 +22,7 @@ assembly_info:
   assembly_informational_version: "{version}"
 
 before_build:
+- cmd: nuget update -self
 - cmd: nuget restore
 
 build:
