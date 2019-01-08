@@ -2,7 +2,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("NFive Server SDK")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("NFive server SDK for plugin development")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("NFive")]
 [assembly: AssemblyProduct("NFive SDK")]
