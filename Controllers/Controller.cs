@@ -47,6 +47,10 @@ namespace NFive.SDK.Server.Controllers
 			this.Rcon = rcon;
 		}
 
+		public virtual Task Loaded() => Task.FromResult(0);
+
+		public virtual Task Started() => Task.FromResult(0);
+
 		/// <summary>
 		/// Reloads this controllers configuration.
 		/// </summary>
