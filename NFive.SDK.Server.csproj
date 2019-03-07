@@ -80,9 +80,17 @@
     <Compile Include="Configuration\ServerConfiguration.cs" />
     <Compile Include="Controllers\ConfigurableController.cs" />
     <Compile Include="Controllers\Controller.cs" />
+    <Compile Include="Deferrals.cs" />
     <Compile Include="Events\BootEvents.cs" />
+    <Compile Include="Events\ClientDeferralsEventArgs.cs" />
+    <Compile Include="Events\ClientEventArgs.cs" />
+    <Compile Include="Events\ClientReconnectEventArgs.cs" />
+    <Compile Include="Events\ClientSessionDeferralsEventArgs.cs" />
+    <Compile Include="Events\ClientSessionEventArgs.cs" />
+    <Compile Include="Events\ClientUserEventArgs.cs" />
     <Compile Include="Events\IEventManager.cs" />
     <Compile Include="Events\ServerEvents.cs" />
+    <Compile Include="Events\SessionEvents.cs" />
     <Compile Include="Extensions\PositionExtensions.cs" />
     <Compile Include="Extensions\VectorExtensions.cs" />
     <Compile Include="Migrations\MigrationConfiguration.cs" />
@@ -97,6 +105,7 @@
     <Compile Include="SDK.cs" />
     <Compile Include="ServerPluginAttribute.cs" />
     <Compile Include="Storage\EFContext.cs" />
+    <Compile Include="Wrappers\SessionManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
