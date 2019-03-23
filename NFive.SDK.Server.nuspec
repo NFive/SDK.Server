@@ -18,6 +18,7 @@
       <dependency id="Google.Protobuf" version="[3.7.0]" />
       <dependency id="MySql.Data" version="[8.0.15]" />
       <dependency id="MySql.Data.EntityFramework" version="[8.0.15]" />
+      <dependency id="Z.EntityFramework.Plus.EF6" version="[1.8.23]" />
     </dependencies>
   </metadata>
 </package>
