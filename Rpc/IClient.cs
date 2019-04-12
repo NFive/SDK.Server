@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using NFive.SDK.Core.Models.Player;
 
 namespace NFive.SDK.Server.Rpc
 {
@@ -55,6 +56,14 @@ namespace NFive.SDK.Server.Rpc
 		/// The client ping.
 		/// </value>
 		int Ping { get; }
+
+		/// <summary>
+		/// Gets the client session.
+		/// </summary>
+		/// <value>
+		/// The client session.
+		/// </value>
+		Session Session { get; }
 
 		/// <summary>
 		/// Gets the specified event on this client.
