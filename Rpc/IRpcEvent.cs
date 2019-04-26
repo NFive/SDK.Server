@@ -33,6 +33,8 @@ namespace NFive.SDK.Server.Rpc
 		/// </value>
 		User User { get; }
 
+		Session Session { get; }
+
 		/// <summary>
 		/// Replies to the event with the specified payloads.
 		/// </summary>
