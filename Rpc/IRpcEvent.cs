@@ -33,6 +33,12 @@ namespace NFive.SDK.Server.Rpc
 		/// </value>
 		User User { get; }
 
+		/// <summary>
+		/// Gets the user belonging to the <see cref="Client"/>.
+		/// </summary>
+		/// <value>
+		/// The Session.
+		/// </value>
 		Session Session { get; }
 
 		/// <summary>
