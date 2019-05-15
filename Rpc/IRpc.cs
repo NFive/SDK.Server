@@ -1,7 +1,6 @@
 namespace NFive.SDK.Server.Rpc
 {
-	/// <inheritdoc cref="IRpcTrigger" />
-	/// <inheritdoc cref="IRpcAttach" />
+	/// <inheritdoc />
 	/// <summary>
 	/// Represents the ability send and receive RPC events.
 	/// </summary>

@@ -13,7 +13,6 @@ namespace NFive.SDK.Server.Storage
 	/// Represents a MySQL Entity Framework database context.
 	/// </summary>
 	/// <typeparam name="TContext">The type of the database context.</typeparam>
-	/// <seealso cref="DbContext" />
 	[PublicAPI]
 	[DbConfigurationType(typeof(MySqlEFConfiguration))]
 	public abstract class EFContext<TContext> : DbContext where TContext : DbContext
