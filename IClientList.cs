@@ -4,7 +4,8 @@ using NFive.SDK.Server.Rpc;
 
 namespace NFive.SDK.Server
 {
-	public interface IClientList : IEnumerable<IClient>, IEnumerable
+	public interface IClientList
 	{
+		List<IClient> Clients { get; }
 	}
 }
