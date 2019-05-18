@@ -55,12 +55,5 @@ namespace NFive.SDK.Server.Rpc
 		/// The client ping.
 		/// </value>
 		int Ping { get; }
-
-		/// <summary>
-		/// Gets the specified event on this client.
-		/// </summary>
-		/// <param name="event">The event on this client.</param>
-		/// <returns></returns>
-		IRpcTrigger Event(string @event);
 	}
 }
