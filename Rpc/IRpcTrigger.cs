@@ -1,3 +1,4 @@
+using System;
 using JetBrains.Annotations;
 
 namespace NFive.SDK.Server.Rpc
@@ -9,6 +10,18 @@ namespace NFive.SDK.Server.Rpc
 	public interface IRpcTrigger
 	{
 		/// <summary>
+		/// Sets the target handle for the RPC message target.
+		/// </summary>
+		/// <param name="handle">The handle of the RPC message target.</param>
+		IRpc Target(int handle);
+
+		/// <summary>
+		/// Sets the target client for the RPC message target.
+		/// </summary>
+		/// <param name="client">The client of the RPC message target.</param>
+		IRpc Target(IClient client);
+
+		/// <summary>
 		/// Triggers the event with the specified payloads.
 		/// </summary>
 		/// <param name="payloads">The payloads to send with the event.</param>
@@ -19,6 +32,7 @@ namespace NFive.SDK.Server.Rpc
 		/// </summary>
 		/// <param name="client">The client to send the event to.</param>
 		/// <param name="payloads">The payloads to send with the event.</param>
+		[Obsolete]
 		void Trigger(IClient client, params object[] payloads);
 	}
 }
