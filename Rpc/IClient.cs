@@ -25,6 +25,14 @@ namespace NFive.SDK.Server.Rpc
 		string Name { get; }
 
 		/// <summary>
+		/// Gets the client end point.
+		/// </summary>
+		/// <value>
+		/// The end point.
+		/// </value>
+		string EndPoint { get; }
+
+		/// <summary>
 		/// Gets the client license.
 		/// </summary>
 		/// <value>
@@ -41,12 +49,12 @@ namespace NFive.SDK.Server.Rpc
 		long? SteamId { get; }
 
 		/// <summary>
-		/// Gets the client end point.
+		/// Gets the client Discord identifier.
 		/// </summary>
 		/// <value>
-		/// The end point.
+		/// The client Discord identifier.
 		/// </value>
-		string EndPoint { get; }
+		ulong? DiscordId { get; }
 
 		/// <summary>
 		/// Gets the client ping.
