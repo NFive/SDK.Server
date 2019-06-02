@@ -1,8 +1,7 @@
-using System;
-using CitizenFX.Core;
 using JetBrains.Annotations;
 using NFive.SDK.Core.Helpers;
 using NFive.SDK.Core.Models;
+using System;
 
 namespace NFive.SDK.Server.Extensions
 {
@@ -17,8 +16,8 @@ namespace NFive.SDK.Server.Extensions
 
 		public static Vector3 TranslateDir(this Vector3 pos, float angleInDegrees, float distance) =>
 			new Vector3(
-				pos.X + (float)Math.Cos(MathUtil.DegreesToRadians(angleInDegrees)) * distance,
-				pos.Y + (float)Math.Sin(MathUtil.DegreesToRadians(angleInDegrees)) * distance,
+				pos.X + (float)Math.Cos(CitizenFX.Core.MathUtil.DegreesToRadians(angleInDegrees)) * distance,
+				pos.Y + (float)Math.Sin(CitizenFX.Core.MathUtil.DegreesToRadians(angleInDegrees)) * distance,
 				pos.Z
 			);
 
