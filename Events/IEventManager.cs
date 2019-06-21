@@ -71,6 +71,7 @@ namespace NFive.SDK.Server.Events
 		/// Raises the specified event.
 		/// </summary>
 		/// <param name="event">The event to raise.</param>
+		[Obsolete]
 		void Raise(string @event);
 
 		/// <summary>
@@ -79,6 +80,7 @@ namespace NFive.SDK.Server.Events
 		/// <typeparam name="T">The type of the first event argument.</typeparam>
 		/// <param name="event">The event to raise.</param>
 		/// <param name="arg1">The first event argument.</param>
+		[Obsolete]
 		void Raise<T>(string @event, T arg1);
 
 		/// <summary>
@@ -89,6 +91,7 @@ namespace NFive.SDK.Server.Events
 		/// <param name="event">The event to raise.</param>
 		/// <param name="arg1">The first event argument.</param>
 		/// <param name="arg2">The second event argument.</param>
+		[Obsolete]
 		void Raise<T1, T2>(string @event, T1 arg1, T2 arg2);
 
 		/// <summary>
@@ -101,6 +104,7 @@ namespace NFive.SDK.Server.Events
 		/// <param name="arg1">The first event argument.</param>
 		/// <param name="arg2">The second event argument.</param>
 		/// <param name="arg3">The third event argument.</param>
+		[Obsolete]
 		void Raise<T1, T2, T3>(string @event, T1 arg1, T2 arg2, T3 arg3);
 
 		/// <summary>
@@ -115,6 +119,7 @@ namespace NFive.SDK.Server.Events
 		/// <param name="arg2">The second event argument.</param>
 		/// <param name="arg3">The third event argument.</param>
 		/// <param name="arg4">The forth event argument.</param>
+		[Obsolete]
 		void Raise<T1, T2, T3, T4>(string @event, T1 arg1, T2 arg2, T3 arg3, T4 arg4);
 
 		/// <summary>
@@ -131,7 +136,10 @@ namespace NFive.SDK.Server.Events
 		/// <param name="arg3">The third event argument.</param>
 		/// <param name="arg4">The forth event argument.</param>
 		/// <param name="arg5">The fifth event argument.</param>
+		[Obsolete]
 		void Raise<T1, T2, T3, T4, T5>(string @event, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5);
+
+		void Fire(string @event, params object[] payload);
 
 		/// <summary>
 		/// Raises the specified event asynchronously and returns when the event has been handled.
@@ -216,17 +224,27 @@ namespace NFive.SDK.Server.Events
 
 		void OnRequest<T1, T2, T3, T4, T5, TReturn>(string @event, Func<T1, T2, T3, T4, T5, TReturn> action);
 
-
+		[Obsolete]
 		TReturn Request<TReturn>(string @event);
-
+		[Obsolete]
 		TReturn Request<T1, TReturn>(string @event, T1 arg);
-
+		[Obsolete]
 		TReturn Request<T1, T2, TReturn>(string @event, T1 arg);
-
+		[Obsolete]
 		TReturn Request<T1, T2, T3, TReturn>(string @event, T1 arg);
-
+		[Obsolete]
 		TReturn Request<T1, T2, T3, T4, TReturn>(string @event, T1 arg);
-
+		[Obsolete]
 		TReturn Request<T1, T2, T3, T4, T5, TReturn>(string @event, T1 arg);
+
+		T1 Request<T1>(string @event, params object[] args);
+
+		Tuple<T1, T2> Request<T1, T2>(string @event, params object[] args);
+
+		Tuple<T1, T2, T3> Request<T1, T2, T3>(string @event, params object[] args);
+
+		Tuple<T1, T2, T3, T4> Request<T1, T2, T3, T4>(string @event, params object[] args);
+
+		Tuple<T1, T2, T3, T4, T5> Request<T1, T2, T3, T4, T5>(string @event, params object[] args);
 	}
 }
