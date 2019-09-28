@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System;
 using System.Threading.Tasks;
+using NFive.SDK.Server.Communications;
 
 namespace NFive.SDK.Server.Events
 {
@@ -15,7 +16,7 @@ namespace NFive.SDK.Server.Events
 		/// </summary>
 		/// <param name="event">The event to attach to.</param>
 		/// <param name="action">The callback to run when the event fires.</param>
-		void On(string @event, Action action);
+		void On(string @event, Action<ICommunicationMessage> action);
 
 		/// <summary>
 		/// Attaches a handler to a specified event.
@@ -23,7 +24,7 @@ namespace NFive.SDK.Server.Events
 		/// <typeparam name="T">The type of the first callback argument.</typeparam>
 		/// <param name="event">The event to attach to.</param>
 		/// <param name="action">The callback to run when the event fires.</param>
-		void On<T>(string @event, Action<T> action);
+		void On<T>(string @event, Action<ICommunicationMessage, T> action);
 
 		/// <summary>
 		/// Attaches a handler to a specified event.
@@ -32,7 +33,7 @@ namespace NFive.SDK.Server.Events
 		/// <typeparam name="T2">The type of the second callback argument.</typeparam>
 		/// <param name="event">The event to attach to.</param>
 		/// <param name="action">The callback to run when the event fires.</param>
-		void On<T1, T2>(string @event, Action<T1, T2> action);
+		void On<T1, T2>(string @event, Action<ICommunicationMessage, T1, T2> action);
 
 		/// <summary>
 		/// Attaches a handler to a specified event.
@@ -42,7 +43,7 @@ namespace NFive.SDK.Server.Events
 		/// <typeparam name="T3">The type of the third callback argument.</typeparam>
 		/// <param name="event">The event to attach to.</param>
 		/// <param name="action">The callback to run when the event fires.</param>
-		void On<T1, T2, T3>(string @event, Action<T1, T2, T3> action);
+		void On<T1, T2, T3>(string @event, Action<ICommunicationMessage, T1, T2, T3> action);
 
 		/// <summary>
 		/// Attaches a handler to a specified event.
@@ -53,7 +54,7 @@ namespace NFive.SDK.Server.Events
 		/// <typeparam name="T4">The type of the forth callback argument.</typeparam>
 		/// <param name="event">The event to attach to.</param>
 		/// <param name="action">The callback to run when the event fires.</param>
-		void On<T1, T2, T3, T4>(string @event, Action<T1, T2, T3, T4> action);
+		void On<T1, T2, T3, T4>(string @event, Action<ICommunicationMessage, T1, T2, T3, T4> action);
 
 		/// <summary>
 		/// Attaches a handler to a specified event.
@@ -65,7 +66,7 @@ namespace NFive.SDK.Server.Events
 		/// <typeparam name="T5">The type of the fifth callback argument.</typeparam>
 		/// <param name="event">The event to attach to.</param>
 		/// <param name="action">The callback to run when the event fires.</param>
-		void On<T1, T2, T3, T4, T5>(string @event, Action<T1, T2, T3, T4, T5> action);
+		void On<T1, T2, T3, T4, T5>(string @event, Action<ICommunicationMessage, T1, T2, T3, T4, T5> action);
 
 		/// <summary>
 		/// Raises the specified event.
@@ -224,27 +225,14 @@ namespace NFive.SDK.Server.Events
 
 		void OnRequest<T1, T2, T3, T4, T5, TReturn>(string @event, Func<T1, T2, T3, T4, T5, TReturn> action);
 
-		[Obsolete]
-		TReturn Request<TReturn>(string @event);
-		[Obsolete]
-		TReturn Request<T1, TReturn>(string @event, T1 arg);
-		[Obsolete]
-		TReturn Request<T1, T2, TReturn>(string @event, T1 arg);
-		[Obsolete]
-		TReturn Request<T1, T2, T3, TReturn>(string @event, T1 arg);
-		[Obsolete]
-		TReturn Request<T1, T2, T3, T4, TReturn>(string @event, T1 arg);
-		[Obsolete]
-		TReturn Request<T1, T2, T3, T4, T5, TReturn>(string @event, T1 arg);
+		Task<T1> Request<T1>(string @event, params object[] args);
 
-		T1 Request<T1>(string @event, params object[] args);
+		Task<Tuple<T1, T2>> Request<T1, T2>(string @event, params object[] args);
 
-		Tuple<T1, T2> Request<T1, T2>(string @event, params object[] args);
+		Task<Tuple<T1, T2, T3>> Request<T1, T2, T3>(string @event, params object[] args);
 
-		Tuple<T1, T2, T3> Request<T1, T2, T3>(string @event, params object[] args);
+		Task<Tuple<T1, T2, T3, T4>> Request<T1, T2, T3, T4>(string @event, params object[] args);
 
-		Tuple<T1, T2, T3, T4> Request<T1, T2, T3, T4>(string @event, params object[] args);
-
-		Tuple<T1, T2, T3, T4, T5> Request<T1, T2, T3, T4, T5>(string @event, params object[] args);
+		Task<Tuple<T1, T2, T3, T4, T5>> Request<T1, T2, T3, T4, T5>(string @event, params object[] args);
 	}
 }
