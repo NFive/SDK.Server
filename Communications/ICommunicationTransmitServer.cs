@@ -1,7 +1,4 @@
 namespace NFive.SDK.Server.Communications
 {
-	public interface ICommunicationTransmitServer : ICommunicationTransmit
-	{
-		
-	}
+	public interface ICommunicationTransmitServer : ICommunicationTransmit { }
 }

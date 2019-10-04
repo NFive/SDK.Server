@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
+using NFive.SDK.Server.Communications;
 using System;
 using System.Threading.Tasks;
-using NFive.SDK.Server.Communications;
 
 namespace NFive.SDK.Server.Events
 {
@@ -79,5 +79,17 @@ namespace NFive.SDK.Server.Events
 		Task<Tuple<T1, T2, T3, T4>> Request<T1, T2, T3, T4>(string @event, params object[] args);
 
 		Task<Tuple<T1, T2, T3, T4, T5>> Request<T1, T2, T3, T4, T5>(string @event, params object[] args);
+
+		void OnRequest(string @event, Action<ICommunicationMessage> action);
+
+		void OnRequest<T>(string @event, Action<ICommunicationMessage, T> action);
+
+		void OnRequest<T1, T2>(string @event, Action<ICommunicationMessage, T1, T2> action);
+
+		void OnRequest<T1, T2, T3>(string @event, Action<ICommunicationMessage, T1, T2, T3> action);
+
+		void OnRequest<T1, T2, T3, T4>(string @event, Action<ICommunicationMessage, T1, T2, T3, T4> action);
+
+		void OnRequest<T1, T2, T3, T4, T5>(string @event, Action<ICommunicationMessage, T1, T2, T3, T4, T5> action);
 	}
 }

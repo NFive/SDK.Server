@@ -1,8 +1,10 @@
+using JetBrains.Annotations;
 using System;
 using System.Threading.Tasks;
 
 namespace NFive.SDK.Server.Communications
 {
+	[PublicAPI]
 	public interface ICommunicationTransmit
 	{
 		void Emit(params object[] payloads);

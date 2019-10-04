@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using NFive.SDK.Core.Controllers;
 using NFive.SDK.Core.Diagnostics;
 
@@ -9,6 +10,7 @@ namespace NFive.SDK.Server.Controllers
 	/// </summary>
 	/// <typeparam name="T">The type of the configuration to load.</typeparam>
 	/// <seealso cref="Controller" />
+	[PublicAPI]
 	public abstract class ConfigurableController<T> : Controller where T : IControllerConfiguration
 	{
 		/// <summary>

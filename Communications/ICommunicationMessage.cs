@@ -1,8 +1,9 @@
+using JetBrains.Annotations;
 using NFive.SDK.Core.Models.Player;
-using NFive.SDK.Server.Rpc;
 
 namespace NFive.SDK.Server.Communications
 {
+	[PublicAPI]
 	public interface ICommunicationMessage
 	{
 		/// <summary>
