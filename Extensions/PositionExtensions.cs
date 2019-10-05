@@ -12,5 +12,7 @@ namespace NFive.SDK.Server.Extensions
 			Y = pos.Y,
 			Z = pos.Z
 		};
+
+		public static CitizenFX.Core.Vector3 ToCitVector3(this Position position) => new CitizenFX.Core.Vector3(position.X, position.Y, position.Z);
 	}
 }
