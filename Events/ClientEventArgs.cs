@@ -1,8 +1,10 @@
+using JetBrains.Annotations;
+using NFive.SDK.Server.Communications;
 using System;
-using NFive.SDK.Server.Rpc;
 
 namespace NFive.SDK.Server.Events
 {
+	[PublicAPI]
 	public class ClientEventArgs : EventArgs
 	{
 		public IClient Client { get; }

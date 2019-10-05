@@ -1,17 +1,19 @@
 using CitizenFX.Core;
+using JetBrains.Annotations;
 using System.Dynamic;
 using System.Linq;
 
-namespace NFive.SDK.Server
+namespace NFive.SDK.Server.Communications
 {
-	public class Deferrals
+	[PublicAPI]
+	public class ConnectionDeferrals
 	{
 		public CallbackDelegate Defer;
 		public CallbackDelegate Done;
 		public CallbackDelegate Update;
 		public CallbackDelegate Drop;
 
-		public Deferrals(ExpandoObject callbacks, CallbackDelegate drop)
+		public ConnectionDeferrals(ExpandoObject callbacks, CallbackDelegate drop)
 		{
 			var callbackList = callbacks.Select(c => (CallbackDelegate)c.Value).ToList();
 			this.Defer = callbackList[0];

@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
 
-namespace NFive.SDK.Server.Rpc
+namespace NFive.SDK.Server.Communications
 {
 	/// <summary>
 	/// Represents a client connected to the server

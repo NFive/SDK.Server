@@ -1,12 +1,14 @@
-using NFive.SDK.Server.Rpc;
+using JetBrains.Annotations;
+using NFive.SDK.Server.Communications;
 
 namespace NFive.SDK.Server.Events
 {
+	[PublicAPI]
 	public class ClientDeferralsEventArgs : ClientEventArgs
 	{
-		public Deferrals Deferrals { get; }
+		public ConnectionDeferrals Deferrals { get; }
 
-		public ClientDeferralsEventArgs(IClient client, Deferrals deferrals) : base(client)
+		public ClientDeferralsEventArgs(IClient client, ConnectionDeferrals deferrals) : base(client)
 		{
 			this.Deferrals = deferrals;
 		}
