@@ -1,22 +1,11 @@
 using JetBrains.Annotations;
 using NFive.SDK.Core.Models.Player;
 
-namespace NFive.SDK.Server.Rpc
+namespace NFive.SDK.Server.Communications
 {
-	/// <summary>
-	/// Represents a received RPC event.
-	/// </summary>
 	[PublicAPI]
-	public interface IRpcEvent
+	public interface ICommunicationMessage
 	{
-		/// <summary>
-		/// Gets the event name.
-		/// </summary>
-		/// <value>
-		/// The event name.
-		/// </value>
-		string Event { get; }
-
 		/// <summary>
 		/// Gets the client that sent the event.
 		/// </summary>
