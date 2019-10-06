@@ -85,6 +85,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ILocaleConfiguration.cs" />
+    <Compile Include="Configuration\IServerConfiguration.cs" />
     <Compile Include="Configuration\ServerConfiguration.cs" />
     <Compile Include="Controllers\ConfigurableController.cs" />
     <Compile Include="Controllers\Controller.cs" />
