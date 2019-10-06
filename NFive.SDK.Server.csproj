@@ -103,7 +103,6 @@
     <Compile Include="Events\ClientSessionDeferralsEventArgs.cs" />
     <Compile Include="Events\ClientSessionEventArgs.cs" />
     <Compile Include="Events\ClientUserEventArgs.cs" />
-    <Compile Include="Events\IEventManager.cs" />
     <Compile Include="Events\ServerEvents.cs" />
     <Compile Include="Events\SessionEvents.cs" />
     <Compile Include="Extensions\PositionExtensions.cs" />
