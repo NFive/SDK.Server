@@ -81,6 +81,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ILocaleConfiguration.cs" />
+    <Compile Include="Configuration\IServerConfiguration.cs" />
     <Compile Include="Communications\ICommunicationMessage.cs" />
     <Compile Include="Communications\ICommunicationReceive.cs" />
     <Compile Include="Communications\ICommunicationReceiveClient.cs" />
