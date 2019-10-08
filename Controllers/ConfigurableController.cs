@@ -23,7 +23,7 @@ namespace NFive.SDK.Server.Controllers
 
 		/// <inheritdoc />
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ConfigurableController{T}"/> class.
+		/// Initializes a new instance of the <see cref="ConfigurableController{T}" /> class.
 		/// </summary>
 		/// <param name="logger">The message logger.</param>
 		/// <param name="configuration">The configuration loaded from file.</param>

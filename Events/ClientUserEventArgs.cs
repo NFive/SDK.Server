@@ -16,7 +16,7 @@ namespace NFive.SDK.Server.Events
 		public User User { get; }
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ClientUserEventArgs"/> class.
+		/// Initializes a new instance of the <see cref="ClientUserEventArgs" /> class.
 		/// </summary>
 		/// <param name="client">The client.</param>
 		/// <param name="user">The user.</param>

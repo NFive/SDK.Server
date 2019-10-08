@@ -16,7 +16,7 @@ namespace NFive.SDK.Server.Events
 		public ConnectionDeferrals Deferrals { get; }
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ClientSessionDeferralsEventArgs"/> class.
+		/// Initializes a new instance of the <see cref="ClientSessionDeferralsEventArgs" /> class.
 		/// </summary>
 		/// <param name="client">The client.</param>
 		/// <param name="session">The session.</param>

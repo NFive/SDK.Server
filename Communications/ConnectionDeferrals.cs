@@ -1,7 +1,7 @@
-using CitizenFX.Core;
-using JetBrains.Annotations;
 using System.Dynamic;
 using System.Linq;
+using CitizenFX.Core;
+using JetBrains.Annotations;
 
 namespace NFive.SDK.Server.Communications
 {

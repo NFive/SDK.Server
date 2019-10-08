@@ -1,6 +1,6 @@
+using System;
 using JetBrains.Annotations;
 using NFive.SDK.Server.Communications;
-using System;
 
 namespace NFive.SDK.Server.Events
 {
@@ -16,7 +16,7 @@ namespace NFive.SDK.Server.Events
 		public IClient Client { get; }
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ClientEventArgs"/> class.
+		/// Initializes a new instance of the <see cref="ClientEventArgs" /> class.
 		/// </summary>
 		/// <param name="client">The client.</param>
 		public ClientEventArgs(IClient client)

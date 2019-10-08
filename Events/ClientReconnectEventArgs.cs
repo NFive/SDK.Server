@@ -24,7 +24,7 @@ namespace NFive.SDK.Server.Events
 		public Session NewSession { get; }
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ClientReconnectEventArgs"/> class.
+		/// Initializes a new instance of the <see cref="ClientReconnectEventArgs" /> class.
 		/// </summary>
 		/// <param name="client">The client.</param>
 		/// <param name="oldSession">The old session.</param>

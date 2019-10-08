@@ -1,8 +1,10 @@
 using System;
 using System.Globalization;
+using JetBrains.Annotations;
 
 namespace NFive.SDK.Server.Configuration
 {
+	[PublicAPI]
 	public interface ILocaleConfiguration
 	{
 		/// <summary>

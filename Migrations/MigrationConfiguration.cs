@@ -1,6 +1,6 @@
-using JetBrains.Annotations;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
+using JetBrains.Annotations;
 
 namespace NFive.SDK.Server.Migrations
 {

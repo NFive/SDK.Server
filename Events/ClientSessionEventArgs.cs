@@ -16,7 +16,7 @@ namespace NFive.SDK.Server.Events
 		public Session Session { get; }
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ClientSessionEventArgs"/> class.
+		/// Initializes a new instance of the <see cref="ClientSessionEventArgs" /> class.
 		/// </summary>
 		/// <param name="client">The client.</param>
 		/// <param name="session">The session.</param>

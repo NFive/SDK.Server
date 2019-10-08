@@ -1,10 +1,10 @@
-using JetBrains.Annotations;
-using MySql.Data.EntityFramework;
-using NFive.SDK.Server.Configuration;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
+using JetBrains.Annotations;
+using MySql.Data.EntityFramework;
+using NFive.SDK.Server.Configuration;
 
 namespace NFive.SDK.Server.Storage
 {
@@ -19,7 +19,7 @@ namespace NFive.SDK.Server.Storage
 	{
 		/// <inheritdoc />
 		/// <summary>
-		/// Initializes a new instance of the <see cref="EFContext{TContext}"/> class.
+		/// Initializes a new instance of the <see cref="EFContext{TContext}" /> class.
 		/// </summary>
 		static EFContext()
 		{
@@ -28,20 +28,21 @@ namespace NFive.SDK.Server.Storage
 
 		/// <inheritdoc />
 		/// <summary>
-		/// Initializes a new instance of the <see cref="EFContext{TContext}"/> class.
+		/// Initializes a new instance of the <see cref="EFContext{TContext}" /> class.
 		/// </summary>
 		protected EFContext() : base(ServerConfiguration.DatabaseConnection) { }
 
 		/// <inheritdoc />
 		/// <summary>
-		/// Initializes a new instance of the <see cref="EFContext{TContext}"/> class.
+		/// Initializes a new instance of the <see cref="EFContext{TContext}" /> class.
 		/// </summary>
 		/// <param name="connectionString">The MySQL database connection string.</param>
 		protected EFContext(string connectionString) : base(connectionString) { }
 
 		/// <inheritdoc />
 		/// <summary>
-		/// This method is called when the model for a derived context has been initialized, but before the model has been locked down and used to initialize the context.
+		/// This method is called when the model for a derived context has been initialized, but before the model has been
+		/// locked down and used to initialize the context.
 		/// </summary>
 		/// <param name="modelBuilder">The builder that defines the model for the context being created.</param>
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -49,8 +50,8 @@ namespace NFive.SDK.Server.Storage
 			base.OnModelCreating(modelBuilder);
 
 			// Store booleans as MySQL BIT type
-			modelBuilder.
-				Properties<bool>()
+			modelBuilder
+				.Properties<bool>()
 				.Configure(c => c.HasColumnType("bit"));
 
 			// Store strings as MySQL VARCHAR type

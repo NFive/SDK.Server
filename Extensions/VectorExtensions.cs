@@ -1,7 +1,7 @@
+using System;
 using JetBrains.Annotations;
 using NFive.SDK.Core.Helpers;
 using NFive.SDK.Core.Models;
-using System;
 
 namespace NFive.SDK.Server.Extensions
 {

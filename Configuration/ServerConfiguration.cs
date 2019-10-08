@@ -29,7 +29,7 @@ namespace NFive.SDK.Server.Configuration
 		/// Gets or sets a value indicating whether automatic database migrations are enabled.
 		/// </summary>
 		/// <value>
-		///   <c>true</c> if automatic database migrations are enabled; otherwise, <c>false</c>.
+		/// <c>true</c> if automatic database migrations are enabled; otherwise, <c>false</c>.
 		/// </value>
 		public static bool AutomaticMigrations { get; set; }
 	}
