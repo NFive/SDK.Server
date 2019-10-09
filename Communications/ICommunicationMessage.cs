@@ -15,7 +15,7 @@ namespace NFive.SDK.Server.Communications
 		IClient Client { get; }
 
 		/// <summary>
-		/// Gets the user belonging to the <see cref="Client"/>.
+		/// Gets the user belonging to the <see cref="Client" />.
 		/// </summary>
 		/// <value>
 		/// The user.
@@ -23,7 +23,7 @@ namespace NFive.SDK.Server.Communications
 		User User { get; }
 
 		/// <summary>
-		/// Gets the user belonging to the <see cref="Client"/>.
+		/// Gets the user belonging to the <see cref="Client" />.
 		/// </summary>
 		/// <value>
 		/// The Session.

@@ -1,6 +1,6 @@
+using System.Threading.Tasks;
 using JetBrains.Annotations;
 using NFive.SDK.Core.Diagnostics;
-using System.Threading.Tasks;
 
 namespace NFive.SDK.Server.Controllers
 {
@@ -16,7 +16,7 @@ namespace NFive.SDK.Server.Controllers
 		protected readonly ILogger Logger;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Controller"/> class.
+		/// Initializes a new instance of the <see cref="Controller" /> class.
 		/// </summary>
 		/// <param name="logger">The message logger.</param>
 		protected Controller(ILogger logger)

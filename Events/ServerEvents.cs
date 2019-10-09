@@ -9,7 +9,8 @@ namespace NFive.SDK.Server.Events
 	public static class ServerEvents
 	{
 		/// <summary>
-		/// The server initialized event which is fired as soon as the server has initialized.
+		/// The server initialized event.
+		/// Fired as soon as the server has initialized.
 		/// </summary>
 		public const string ServerInitialized = "nfive:server:serverInitialized";
 	}
