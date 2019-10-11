@@ -87,6 +87,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Communications\IConnectionDeferrals.cs" />
     <Compile Include="Configuration\ILocaleConfiguration.cs" />
     <Compile Include="Configuration\IServerConfiguration.cs" />
     <Compile Include="Communications\ICommunicationMessage.cs" />
@@ -101,7 +102,6 @@
     <Compile Include="Configuration\ServerConfiguration.cs" />
     <Compile Include="Controllers\ConfigurableController.cs" />
     <Compile Include="Controllers\Controller.cs" />
-    <Compile Include="Communications\ConnectionDeferrals.cs" />
     <Compile Include="Events\BootEvents.cs" />
     <Compile Include="Events\ClientDeferralsEventArgs.cs" />
     <Compile Include="Events\ClientEventArgs.cs" />
