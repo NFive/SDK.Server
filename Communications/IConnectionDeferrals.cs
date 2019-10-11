@@ -7,6 +7,8 @@ namespace NFive.SDK.Server.Communications
 	{
 		string Message { set; }
 
+		void Defer();
+
 		void ShowCard(string json);
 
 		void Allow();
