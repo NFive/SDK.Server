@@ -6,7 +6,7 @@ namespace NFive.SDK.Server.Events
 	/// NFive server boot events which are sent over the server event manager.
 	/// </summary>
 	[PublicAPI]
-	public static class NFiveBootEvents
+	public static class BootEvents
 	{
 		/// <summary>
 		/// Event which is used to request the timestamp of when the server started this boot.
