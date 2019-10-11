@@ -75,8 +75,8 @@
       <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="NFive.SDK.Core.net, Version=0.1.0.44, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\NFive.SDK.Core.0.1.0.44\lib\net452\NFive.SDK.Core.net.dll</HintPath>
+    <Reference Include="NFive.SDK.Core.net, Version=0.1.0.46, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\NFive.SDK.Core.0.1.0.46\lib\net452\NFive.SDK.Core.net.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -87,7 +87,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Communications\IConnectionDeferrals.cs" />
+    <Compile Include="Events\IConnectionDeferrals.cs" />
     <Compile Include="Configuration\ILocaleConfiguration.cs" />
     <Compile Include="Configuration\IServerConfiguration.cs" />
     <Compile Include="Communications\ICommunicationMessage.cs" />
@@ -102,7 +102,7 @@
     <Compile Include="Configuration\ServerConfiguration.cs" />
     <Compile Include="Controllers\ConfigurableController.cs" />
     <Compile Include="Controllers\Controller.cs" />
-    <Compile Include="Events\BootEvents.cs" />
+    <Compile Include="Events\NFiveBootEvents.cs" />
     <Compile Include="Events\ClientDeferralsEventArgs.cs" />
     <Compile Include="Events\ClientEventArgs.cs" />
     <Compile Include="Events\ClientReconnectEventArgs.cs" />
@@ -114,6 +114,8 @@
     <Compile Include="Extensions\PositionExtensions.cs" />
     <Compile Include="Extensions\VectorExtensions.cs" />
     <Compile Include="Communications\IClientList.cs" />
+    <Compile Include="IoC\ComponentAttribute.cs" />
+    <Compile Include="IoC\Lifetime.cs" />
     <Compile Include="Migrations\MigrationConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rcon\IRconManager.cs" />
