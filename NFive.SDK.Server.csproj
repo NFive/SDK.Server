@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Events\FiveMServerEvents.cs" />
+    <Compile Include="Events\IExplosionEvent.cs" />
     <Compile Include="Events\IConnectionDeferrals.cs" />
     <Compile Include="Configuration\ILocaleConfiguration.cs" />
     <Compile Include="Configuration\IServerConfiguration.cs" />
