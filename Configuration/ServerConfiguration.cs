@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using NFive.SDK.Core.Configuration;
 using NFive.SDK.Core.Diagnostics;
 
 namespace NFive.SDK.Server.Configuration
@@ -32,5 +33,7 @@ namespace NFive.SDK.Server.Configuration
 		/// <c>true</c> if automatic database migrations are enabled; otherwise, <c>false</c>.
 		/// </value>
 		public static bool AutomaticMigrations { get; set; }
+
+		public static LocaleConfiguration Locale { get; set; } = new LocaleConfiguration();
 	}
 }
