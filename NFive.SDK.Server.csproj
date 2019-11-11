@@ -127,6 +127,7 @@
     <Compile Include="Extensions\PositionExtensions.cs" />
     <Compile Include="Extensions\VectorExtensions.cs" />
     <Compile Include="Communications\IClientList.cs" />
+    <Compile Include="IBaseScriptProxy.cs" />
     <Compile Include="IoC\ComponentAttribute.cs" />
     <Compile Include="IoC\Lifetime.cs" />
     <Compile Include="Locales\LocaleCatalog.cs" />
