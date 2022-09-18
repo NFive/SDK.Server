@@ -1,6 +1,10 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using NFive.SDK.Server.Configuration;
 
 namespace NFive.SDK.Server.Storage
@@ -64,6 +68,29 @@ namespace NFive.SDK.Server.Storage
 			{
 				property.SetIsUnicode(false);
 			}
+		}
+
+		public override int SaveChanges(bool acceptAllChangesOnSuccess)
+		{
+			var serviceProvider = this.GetService<IServiceProvider>();
+			var items = new Dictionary<object, object>();
+
+			foreach (var entry in this.ChangeTracker.Entries().Where(e => (e.State == EntityState.Added) || (e.State == EntityState.Modified)))
+			{
+				var entity = entry.Entity;
+				var context = new ValidationContext(entity, serviceProvider, items);
+
+				var results = new List<ValidationResult>();
+
+				if (Validator.TryValidateObject(entity, context, results, true)) continue;
+
+				if (results.Any())
+				{
+					throw new EntityValidationException("Entity Validation failed.", results);
+				}
+			}
+
+			return base.SaveChanges(acceptAllChangesOnSuccess);
 		}
 	}
 }
