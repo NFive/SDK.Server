@@ -22,7 +22,7 @@
 
   <ItemGroup>
     <PackageReference Include="CitizenFX.Core.Server" Version="1.0.5886" />
-    <PackageReference Include="NFive.SDK.Core" Version="0.1.0-tags-0-0-1-beta.1" />
+    <PackageReference Include="NFive.SDK.Core" Version="0.1.0-beta" />
     <PackageReference Include="JetBrains.Annotations" Version="2022.1.0" />
     <PackageReference Include="K4os.Compression.LZ4" Version="1.2.16" />
     <PackageReference Include="K4os.Compression.LZ4.Streams" Version="1.2.16" />
