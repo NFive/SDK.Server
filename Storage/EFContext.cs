@@ -38,6 +38,16 @@ namespace NFive.SDK.Server.Storage
 
 		}
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="EFContext{TContext}"/> class.
+		/// </summary>
+		/// <param name="options">The options for this context.</param>
+		protected EFContext(DbContextOptions options)
+			: base(options)
+		{
+
+		}
+
 		private static DbContextOptions GetOptions(string connectionString)
 		{
 			return new DbContextOptionsBuilder().UseMySql(connectionString).Options;
