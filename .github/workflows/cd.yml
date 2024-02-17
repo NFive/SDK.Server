@@ -90,4 +90,4 @@ jobs:
         run: dotnet pack NFive.SDK.Server.csproj -p:PackageVersion=${{ env.SEMVER }} --configuration Release
       
       - name: Push nuget package
-        run: dotnet nuget push **/*.nupkg --skip-duplicate --source "https://api.nuget.org/v3/index.json" --api-key ${{secrets.nuget_api_key}}
+        run: dotnet nuget push **/NFive.SDK.Server.*.nupkg --skip-duplicate --source "https://api.nuget.org/v3/index.json" --api-key ${{secrets.nuget_api_key}}
