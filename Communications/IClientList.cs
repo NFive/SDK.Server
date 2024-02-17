@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using NFive.SDK.Core.Models.Player;
 using NFive.SDK.Server.Events;
 
 namespace NFive.SDK.Server.Communications
@@ -14,7 +15,7 @@ namespace NFive.SDK.Server.Communications
 		/// <value>
 		/// The clients.
 		/// </value>
-		List<IClient> Clients { get; }
+		Dictionary<Session,IClient> Clients { get; }
 
 		/// <summary>
 		/// Occurs when [client added].

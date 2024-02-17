@@ -1,9 +1,10 @@
 using System;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using JetBrains.Annotations;
-using MySql.Data.EntityFramework;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using NFive.SDK.Server.Configuration;
 
 namespace NFive.SDK.Server.Storage
@@ -14,30 +15,43 @@ namespace NFive.SDK.Server.Storage
 	/// </summary>
 	/// <typeparam name="TContext">The type of the database context.</typeparam>
 	[PublicAPI]
-	[DbConfigurationType(typeof(MySqlEFConfiguration))]
-	public abstract class EFContext<TContext> : DbContext where TContext : DbContext
+	public abstract class EFContext<TContext> : DbContext
+		where TContext : DbContext
 	{
 		/// <inheritdoc />
 		/// <summary>
 		/// Initializes a new instance of the <see cref="EFContext{TContext}" /> class.
 		/// </summary>
-		static EFContext()
+		protected EFContext()
+			: base(GetOptions(ServerConfiguration.DatabaseConnection))
 		{
-			Database.SetInitializer<TContext>(null);
 		}
 
 		/// <inheritdoc />
 		/// <summary>
 		/// Initializes a new instance of the <see cref="EFContext{TContext}" /> class.
 		/// </summary>
-		protected EFContext() : base(ServerConfiguration.DatabaseConnection) { }
-
-		/// <inheritdoc />
-		/// <summary>
-		/// Initializes a new instance of the <see cref="EFContext{TContext}" /> class.
-		/// </summary>
 		/// <param name="connectionString">The MySQL database connection string.</param>
-		protected EFContext(string connectionString) : base(connectionString) { }
+		protected EFContext(string connectionString)
+			: base(GetOptions(connectionString))
+		{
+
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="EFContext{TContext}"/> class.
+		/// </summary>
+		/// <param name="options">The options for this context.</param>
+		protected EFContext(DbContextOptions options)
+			: base(options)
+		{
+
+		}
+
+		private static DbContextOptions GetOptions(string connectionString)
+		{
+			return new DbContextOptionsBuilder().UseMySql(connectionString).Options;
+		}
 
 		/// <inheritdoc />
 		/// <summary>
@@ -45,20 +59,48 @@ namespace NFive.SDK.Server.Storage
 		/// locked down and used to initialize the context.
 		/// </summary>
 		/// <param name="modelBuilder">The builder that defines the model for the context being created.</param>
-		protected override void OnModelCreating(DbModelBuilder modelBuilder)
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);
 
 			// Store booleans as MySQL BIT type
-			modelBuilder
-				.Properties<bool>()
-				.Configure(c => c.HasColumnType("bit"));
+			foreach (var property in modelBuilder.Model.GetEntityTypes()
+				         .SelectMany(t => t.GetProperties())
+				         .Where(p => p.ClrType == typeof(bool) && p.GetColumnType() == null))
+			{
+				property.SetColumnType("bit");
+			}
 
 			// Store strings as MySQL VARCHAR type
-			modelBuilder
-				.Properties()
-				.Where(x => x.PropertyType == typeof(string) && !x.GetCustomAttributes(false).OfType<ColumnAttribute>().Any(q => q.TypeName != null && q.TypeName.Equals("varchar", StringComparison.InvariantCultureIgnoreCase)))
-				.Configure(c => c.HasColumnType("varchar"));
+			foreach (var property in modelBuilder.Model.GetEntityTypes()
+				         .SelectMany(t => t.GetProperties())
+				         .Where(p => p.ClrType == typeof(string) && p.GetColumnType() == null))
+			{
+				property.SetIsUnicode(false);
+			}
+		}
+
+		public override int SaveChanges(bool acceptAllChangesOnSuccess)
+		{
+			var serviceProvider = this.GetService<IServiceProvider>();
+			var items = new Dictionary<object, object>();
+
+			foreach (var entry in this.ChangeTracker.Entries().Where(e => (e.State == EntityState.Added) || (e.State == EntityState.Modified)))
+			{
+				var entity = entry.Entity;
+				var context = new ValidationContext(entity, serviceProvider, items);
+
+				var results = new List<ValidationResult>();
+
+				if (Validator.TryValidateObject(entity, context, results, true)) continue;
+
+				if (results.Any())
+				{
+					throw new EntityValidationException("Entity Validation failed.", results);
+				}
+			}
+
+			return base.SaveChanges(acceptAllChangesOnSuccess);
 		}
 	}
 }
