@@ -16,14 +16,13 @@
     <ProjectUrl>https://github.com/NFive/SDK.Server</ProjectUrl>
     <RepositoryUrl>https://github.com/NFive/SDK.Server</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Description>NFive Server SDK for plugins</Description>
-    <Version>0.1.4</Version>
-    <Description>NFive core SDK for plugin development</Description>
+    <Version>0.1.5</Version>
+    <Description>NFive server SDK for plugin development</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
     <Copyright>Copyright © NFive 2018-2024</Copyright>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <UserSecretsId>fbf29b5f-58b2-43af-872b-d31d0ad8c6c4</UserSecretsId>
+    <PackageProjectUrl>https://github.com/NFive</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
@@ -42,7 +41,7 @@
 
   <ItemGroup>
     <PackageReference Include="CitizenFX.Core.Server" Version="1.0.5886" />
-    <PackageReference Include="NFive.SDK.Core" Version="0.1.4" />
+    <PackageReference Include="NFive.SDK.Core" Version="0.1.5" />
     <PackageReference Include="JetBrains.Annotations" Version="2022.1.0" />
     <PackageReference Include="K4os.Compression.LZ4" Version="1.2.16" />
     <PackageReference Include="K4os.Compression.LZ4.Streams" Version="1.2.16" />

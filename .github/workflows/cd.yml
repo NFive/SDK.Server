@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       semVer: ${{ steps.gitversion.outputs.semVer }}
-      assemblySemVer: ${{ steps.gitversion.outputs.assemblySemVer }}
 
     steps:
       - uses: actions/checkout@v4
@@ -37,7 +36,6 @@ jobs:
     env:
       SEMVER: ${{ needs.calculate-version.outputs.semVer }}
       ZipName: NFive.SDK.Server-${{ needs.calculate-version.outputs.semVer }}.zip
-      ASSEMBLYSEMVER: ${{ needs.calculate-version.outputs.assemblySemVer }}
 
     steps:
       - uses: actions/checkout@v4
@@ -49,7 +47,7 @@ jobs:
         run: nuget restore NFive.SDK.Server.sln
 
       - name: Build the solution
-        run: dotnet build -c Release /p:Version=${{env.ASSEMBLYSEMVER}} -o Build NFive.SDK.Server.sln
+        run: dotnet build -c Release /p:Version=${{env.SEMVER}} -o Build NFive.SDK.Server.sln
 
       - uses: vimtor/action-zip@v1
         with:

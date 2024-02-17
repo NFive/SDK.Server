@@ -16,7 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       semVer: ${{ steps.gitversion.outputs.semVer }}
-      assemblySemVer: ${{ steps.gitversion.outputs.assemblySemVer }}
 
     steps:
       - uses: actions/checkout@v4
@@ -40,8 +39,7 @@ jobs:
     needs: calculate-version
     env:
       SEMVER: ${{ needs.calculate-version.outputs.semVer }}
-      ASSEMBLYSEMVER: ${{ needs.calculate-version.outputs.assemblySemVer }}
-      
+        
     steps:
       - uses: actions/checkout@v4
 
@@ -52,7 +50,7 @@ jobs:
         run: nuget restore NFive.SDK.Server.sln
 
       - name: Build the solution
-        run: dotnet build -c Release -o Build /p:Version=${{env.ASSEMBLYSEMVER}} Nfx.SDK.Server.sln
+        run: dotnet build -c Release -o Build /p:Version=${{env.SEMVER}} Nfx.SDK.Server.sln
 
       - name: Attach Zip as build artifact
         uses: actions/upload-artifact@v4
