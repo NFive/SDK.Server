@@ -42,15 +42,24 @@ jobs:
         
     steps:
       - uses: actions/checkout@v4
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 2.0.x
 
-      - name: Setup NuGet
-        uses: NuGet/setup-nuget@v2
+      - uses: actions/cache@v4
+        with:
+          path: ${{ github.workspace }}\.nuget\packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
 
       - name: Restore dependencies
-        run: nuget restore NFive.SDK.Server.sln
+        run: dotnet restore NFive.SDK.Server.sln
 
       - name: Build the solution
-        run: dotnet build -c Release -o Build /p:Version=${{env.SEMVER}} NFive.SDK.Server.sln
+        run: dotnet build --no-restore -c Release -o Build /p:Version=${{env.SEMVER}} NFive.SDK.Server.sln
 
       - name: Attach Zip as build artifact
         uses: actions/upload-artifact@v4
